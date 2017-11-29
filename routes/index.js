@@ -80,6 +80,6 @@ app.post('/message',function (req, res) {
 	res.set({
           'content-type': 'application/json'
       }).send(JSON.stringify(massage));
-    }
+    })
 
 module.exports = router;
