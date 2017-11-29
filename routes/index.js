@@ -30,7 +30,7 @@ router.get('/keyboard', function(req, res){
 
 
 
-app.post('/message',function (req, res) {
+router.post('/message',function (req, res) {
 
     const _obj = {
         user_key: req.body.user_key,
