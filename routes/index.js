@@ -17,7 +17,7 @@ router.get('/keyboard', function(req, res){
   	"keyboard": {
     "type": 'buttons',
     "buttons": [
-    	"학식", 
+    	"학식",
     	"외식",
     	]
   }
@@ -48,7 +48,7 @@ app.post('/message',function (req, res) {
 
     else if(_obj.content == '외식')
     {
-      
+
       let massage = {
           "message": {
               "text": '뭐 먹을래?'
@@ -80,6 +80,6 @@ app.post('/message',function (req, res) {
 	res.set({
           'content-type': 'application/json'
       }).send(JSON.stringify(massage));
-    }
+    };
 
 module.exports = router;
