@@ -9,9 +9,10 @@ router.get('/', function(req, res, next) {
 router.get('/keyboard', function(req, res){
   const menu = {
   	"message": {
-  		"text": '밥은 어디서 먹을래??'
-  		"text": '"학식" 이나 "외식" 이라 쓰시오'
-
+  		"text": [
+  		'밥은 어디서 먹을래??',
+  		'"학식" 이나 "외식" 이라 쓰시오',
+  		]
   	},
   	"keyboard": {
     "type": 'buttons',
