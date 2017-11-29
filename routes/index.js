@@ -49,7 +49,7 @@ app.post('/message',function (req, res) {
     else if(_obj.content == '외식')
     {
 
-      let massage = {
+      const massage = {
           "message": {
               "text": '뭐 먹을래?'
           },
@@ -71,7 +71,7 @@ app.post('/message',function (req, res) {
 
 
     else {
-        let massage = {
+        const massage = {
             "message": {
                 "text": '못 알아 먹었다...'
             }
