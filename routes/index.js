@@ -237,7 +237,7 @@ router.post('/message', (req, res) => {
                     WHERE Food_Num in\
                     (SELECT F_Num\
                     FROM COOKED_BY, RESTAURANT\
-                    WHERE R_Num = Rest_Num and Rest_Name = '?')'; 
+                    WHERE R_Num = Rest_Num and Rest_Name = ?)'; 
     let foodtmp = ''
     db.query(foodsql,[_obj.content]  ,function (err, rows, fields) {
       for(var i = 0; i<rows.length;i++){
