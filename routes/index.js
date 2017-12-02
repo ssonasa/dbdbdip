@@ -229,10 +229,17 @@ router.post('/message', (req, res) => {
     chmod = 0;
     console.log(_obj.content);
     console.log(chmod);
-    
-    let sql = 'select Rest_Name, Map, Average_Cost\ 
+
+    let sql = 'select Rest_Name\
+              from RESTAURANT\
+              where Rest_Num in\
+              (select R_Num\
+              from COOKED_BY,FOOD\
+              where F_Num=Food_Num and Food_Name = ?)';
+
+    /*let sql = 'select Rest_Name, Map, Average_Cost\ 
               from RESTAURANT \
-              where Rest_Name = ?';
+              where Rest_Name = ?';*/
 
     let foodsql = 'select Food_Name\
                   from FOOD\
