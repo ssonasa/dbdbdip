@@ -255,6 +255,7 @@ router.post('/message', (req, res) => {
               from RESTAURANT\
               where Rest_Name = ?';
       db.query(sql,[_obj.content]  ,function (err, rows2, fields) {
+        console.log(rows2);
         tmp += '식당이름 : ' + rows2[0].Rest_Name + '\n메뉴 : '+ foodtmp + '\n예상가격(1인당) : ' + rows2[0].Average_Cost;
         console.log(tmp); 
         let cb = function(){
