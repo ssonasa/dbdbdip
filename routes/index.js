@@ -195,19 +195,32 @@ router.post('/message', (req, res) => {
          
       let cb = function(){
         console.log(tmp);
-        let message = {
-          "keyboard": {
-          "type": "text"    
-          },
-          "message": {
-          "text": tmp
-          }
-        };
-        res.send(message);
-      };
+        if(tmp == ''){
+          let message = {
+            "keyboard": {
+            "type": "text"    
+            },
+            "message": {
+            "text": '해당 음식이 없습니다. 다시 입력해 주세요.'
+            }
+          };
+          chmod = 2;
+          res.send(message);  
+        }
+        else{
+          let message = {
+            "keyboard": {
+            "type": "text"    
+            },
+            "message": {
+            "text": tmp
+            }
+          };
+          res.send(message);
+        }
+      }; 
       cb();   
     });
-
   }
 
 
