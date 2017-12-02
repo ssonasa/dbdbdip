@@ -260,10 +260,13 @@ router.post('/message', (req, res) => {
         let cb = function(){
           let message = {
             "keyboard": {
-            "type": "text"    
+            "type": "buttons",
+            "buttons":[
+              "처음으로"
+              ]    
             },
             "message": {
-            "text": tmp + '\n식당이름을 입력해주세요.'
+            "text": tmp
             }
           };/*
           let message = {
