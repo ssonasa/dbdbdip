@@ -274,11 +274,12 @@ router.post('/message', (req, res) => {
             }
           };//let message = ~
           console.log('hello');
-          res.send(message);
+          let cb2 = function(){res.send(message);};
+          cb2();
         };// let cb function() = ~
         
       });//db.query(sql)  
-      cb();  
+
     });//db.query(foodsql)
   }//else if  
       
