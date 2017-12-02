@@ -228,9 +228,10 @@ router.post('/message', (req, res) => {
 
   //식당이름 들어오고 식당 입력
   else if(chmod == 3){
+    console.log(chmod);
     chmod = 0;
     console.log(_obj.content);
-    console.log(chmod);
+    
 
     let sql = 'select Rest_Name,Map, Average_Cost\
               from RESTAURANT\
