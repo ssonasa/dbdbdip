@@ -270,8 +270,8 @@ router.post('/message', (req, res) => {
           res.sned(message);
         };// let cb function() = ~
         cd();
-      };//db.query(sql)    
-    };//db.query(foodsql)
+      });//db.query(sql)    
+    });//db.query(foodsql)
   }//else if  
       
 
