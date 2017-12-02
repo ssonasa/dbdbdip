@@ -152,6 +152,7 @@ router.post('/message', (req, res) => {
           "text": tmp
           }
         };
+        chmod = 3;
         res.send(message);
       };
       cb();   
@@ -173,7 +174,7 @@ router.post('/message', (req, res) => {
     res.send(message);  
   }
 
-  //음식 선택
+  //음식 입력
   else if(chmod == 2){
     chmod = 0;
     console.log(_obj.content);
@@ -214,9 +215,10 @@ router.post('/message', (req, res) => {
             "type": "text"    
             },
             "message": {
-            "text": tmp
+            "text": tmp + '\n식당이름을 입력해주세요.'
             }
           };
+          chmod = 3;
           res.send(message);
         }
       }; 
