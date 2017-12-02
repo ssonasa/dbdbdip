@@ -173,7 +173,7 @@ router.post('/message', (req, res) => {
   }
 
   //음식 선택
-  else if(chmod = 2){
+  else if(chmod == 2){
     chmod = 0;
     console.log(_obj.content);
     console.log(chmod);
