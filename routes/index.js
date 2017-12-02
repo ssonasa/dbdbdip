@@ -273,7 +273,7 @@ router.post('/message', (req, res) => {
               }
             }
           };//let message = ~
-          console.log(hello);
+          console.log('hello');
           res.send(message);
         };// let cb function() = ~
         cb();
