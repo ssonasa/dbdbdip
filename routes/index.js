@@ -71,16 +71,23 @@ router.post('/message', (req, res) => {
       "keyboard": {
           "type": "buttons",
           "buttons": [
+            "처음으로"
+          /*
               "학식",
               "기숙사식당-아침",
               "기숙사식당-점심",
               "기숙사식당-저녁",
               "교직원식당-점심",
               "교직원식당-저녁"
+          */
           ]
       },
       "message": {
-        "text": '메뉴를 선택하세요.'
+        "text": "안에서 먹자",
+        "message_button" : {
+          "label": "식당",
+          "url" : 
+        }
       }
     };
     res.send(message);  
