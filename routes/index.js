@@ -10,6 +10,7 @@ var tmp = '';
 var chmod = 0;
 //chmod = 1 : 밖 > 종류
 //chmod = 2 : 밖 > 음식 
+//chmod = 3 : 식당 선택
 
 //mysql sever
 var db = mysql.createConnection({
@@ -126,7 +127,7 @@ router.post('/message', (req, res) => {
     res.send(message);  
   }
 
-  //종류선택
+  //음식 종류 들어오고 종류선택
   else if(chmod == 1) {
     chmod = 0;
     console.log(_obj.content);
@@ -223,6 +224,53 @@ router.post('/message', (req, res) => {
     });
   }
 
+  //식당이름 들어오고 식당 입력
+  else if(chmod == 3){
+    chmod = 0;
+    console.log(_obj.content);
+    console.log(chmod);
+    let sql = ' SELECT Rest_Name, Map, Average_Cost\ 
+                FROM RESTAURANT \
+                WHERE Rest_Name = ?';
+    let foodsql = ' SELECT Food_Name\
+                    FROM FOOD\
+                    WHERE Food_Num in\
+                    (SELECT F_Num\
+                    FROM COOKED_BY, RESTAURANT\
+                    WHERE R_Num = Rest_Num and Rest_Name = '?')'; 
+    let foodtmp = ''
+    db.query(foodsql,[_obj.content]  ,function (err, rows, fields) {
+      for(var i = 0; i<rows.length;i++){
+        if(rows.length-1 == i)
+            foodtmp += rows[i].Food_Name
+          else
+            foodtmp += rows[i].Food_Name + '\n';
+      }
+      db.query(sql,[_obj.content]  ,function (err, rows, fields) {
+        tmp += '식당이름 : ' + rows.Rest_Name + '\n메뉴 :\n'+ foodtmp + '\n예상가격(1인당) : ' + rows.Average_Cost; 
+        let cb = function(){
+          let message = {
+            "keyboard": {
+              "type": "buttons",
+              "buttons": [
+                "처음으로",    
+              ]
+            },
+            "message": {
+              "text": tmp
+              "message_button" : {
+                "label" : "지도"
+                "url" : rows.Map
+              }
+            }
+          };//let message = ~
+          res.sned(message);
+        };// let cb function() = ~
+        cd();
+      }//db.query(sql)    
+    }//db.query(foodsql)
+  }//else if  
+      
 
   //나머지
   else {
