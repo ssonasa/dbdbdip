@@ -269,7 +269,7 @@ router.post('/message', (req, res) => {
               "text": tmp,
               "message_button" : {
                 "label": "위치",
-                "url" : row2[0].Map
+                "url" : rows2[0].Map
               }
             }
           };/*
