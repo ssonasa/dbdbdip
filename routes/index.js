@@ -230,6 +230,7 @@ router.post('/message', (req, res) => {
   else if(chmod == 3){
     console.log(chmod);
     chmod = 0;
+    tmp = '';
     console.log(_obj.content);
     
 
@@ -252,9 +253,10 @@ router.post('/message', (req, res) => {
           else
             foodtmp += rows[i].Food_Name + '\n';
       }
+
       console.log(foodtmp);
-      db.query(sql,[_obj.content]  ,function (err, rows, fields) {
-        tmp += '식당이름 : ' + rows.Rest_Name + '\n메뉴 :\n'+ foodtmp + '\n예상가격(1인당) : ' + rows.Average_Cost;
+      db.query(sql,[_obj.content]  ,function (err, rows2, fields) {
+        tmp += '식당이름 : ' + rows2.Rest_Name + '\n메뉴 :\n'+ foodtmp + '\n예상가격(1인당) : ' + rows2.Average_Cost;
         console.log(tmp); 
         let cb = function(){
           let message = {
@@ -268,7 +270,7 @@ router.post('/message', (req, res) => {
               "text": tmp,
               "message_button" : {
                 "label" : "위치",
-                "url" : rows.Map
+                "url" : rows2.Map
               }
             }
           };//let message = ~
