@@ -268,30 +268,31 @@ router.post('/message', (req, res) => {
           res.send(message); 
         }
           
-
-        console.log(rows2[0]);
-        tmp += '식당이름 : ' + rows2[0].Rest_Name + '\n메뉴 : '+ foodtmp + '\n예상가격(1인당) : ' + rows2[0].Average_Cost;
-        console.log(tmp); 
-        let cb = function(){
-          let message = {
-            "keyboard": {
-            "type": "buttons",
-            "buttons":[
-              "처음으로"
-              ]    
-            },
-            "message": {
-              "text": tmp,
-              "message_button" : {
-                "label": "위치",
-                "url" : rows2[0].Map
-              }
-            } 
-          };
-          res.send(message);   
-          
-        };// let cb function() = ~
-        cb();
+        else {
+          console.log(rows2[0]);
+          tmp += '식당이름 : ' + rows2[0].Rest_Name + '\n메뉴 : '+ foodtmp + '\n예상가격(1인당) : ' + rows2[0].Average_Cost;
+          console.log(tmp); 
+          let cb = function(){
+            let message = {
+              "keyboard": {
+              "type": "buttons",
+              "buttons":[
+                "처음으로"
+                ]    
+              },
+              "message": {
+                "text": tmp,
+                "message_button" : {
+                  "label": "위치",
+                  "url" : rows2[0].Map
+                }
+              } 
+            };
+            res.send(message);   
+            
+          };// let cb function() = ~
+          cb();
+        }
       });//db.query(sql)  
 
     });//db.query(foodsql)
