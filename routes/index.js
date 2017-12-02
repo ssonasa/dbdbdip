@@ -260,6 +260,14 @@ router.post('/message', (req, res) => {
         let cb = function(){
           let message = {
             "keyboard": {
+            "type": "text"    
+            },
+            "message": {
+            "text": tmp + '\n식당이름을 입력해주세요.'
+            }
+          };/*
+          let message = {
+            "keyboard": {
               "type": "buttons",
               "buttons": [
                 "처음으로",    
@@ -272,7 +280,7 @@ router.post('/message', (req, res) => {
                 "url" : rows2.Map
               }
             }
-          };//let message = ~
+          };//let message = ~*/
           console.log('hello');
           let cb2 = function(){res.send(message);};
           cb2();
