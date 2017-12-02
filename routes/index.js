@@ -7,6 +7,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 var tmp = '';
+var chmod = 0;
+//chmod = 1 : 밖 > 종류
+//chmod = 2 : 밖 > 음식 
 
 //mysql sever
 var db = mysql.createConnection({
@@ -58,6 +61,7 @@ router.post('/message', (req, res) => {
     };
     res.send(message);
     tmp = '';
+    chmod = 0;
   }
   //안에서 먹을래!
   else if(_obj.content ==  '안에서 먹을래'){
@@ -118,19 +122,17 @@ router.post('/message', (req, res) => {
         "text": '메뉴를 선택하세요.'
       }
     };
-    
+    chmod = 1;
     res.send(message);  
   }
 
   //종류선택
-  else if(_obj.content == '한식' || _obj.content == '일식' || _obj.content == '중식' || _obj.content == '양식' || _obj.content == '술집' || _obj.content == '기타') {
-    console.log("여기1");
+  else if(chmod == 1) {
     console.log(_obj.content);
     let sql = 'select Rest_Name from FOOD_TYPE,RESTAURANT where Type_Num = T_Num and Type_Name = ?';
     
     db.query(sql,[_obj.content]  ,function (err, rows, fields) {
       for(var i = 0; i<rows.length;i++){
-        console.log("1");
         console.log(rows[i].Rest_Name);
           if(rows.length-1 == i)
             tmp += rows[i].Rest_Name;
@@ -139,7 +141,6 @@ router.post('/message', (req, res) => {
       }
          
       let cb = function(){
-        console.log("2");
         console.log(tmp);
         let message = {
           "keyboard": {
@@ -168,6 +169,10 @@ router.post('/message', (req, res) => {
     };
     res.send(message);  
   }
+
+  //음식 선택
+
+
 
   //나머지
   else {
