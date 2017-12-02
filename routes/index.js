@@ -269,7 +269,7 @@ router.post('/message', (req, res) => {
               }
             }
           };//let message = ~
-          res.sned(message);
+          res.send(message);
         };// let cb function() = ~
         cb();
       });//db.query(sql)    
