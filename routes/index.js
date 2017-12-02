@@ -229,15 +229,17 @@ router.post('/message', (req, res) => {
     chmod = 0;
     console.log(_obj.content);
     console.log(chmod);
-    let sql = 'SELECT Rest_Name, Map, Average_Cost\ 
-              FROM RESTAURANT \
-              WHERE Rest_Name = ?';
-    let foodsql = 'SELECT Food_Name\
-                  FROM FOOD\
+    
+    let sql = 'select Rest_Name, Map, Average_Cost\ 
+              from RESTAURANT \
+              where Rest_Name = ?';
+
+    let foodsql = 'select Food_Name\
+                  from FOOD\
                   WHERE Food_Num in\
-                  (SELECT F_Num\
-                  FROM COOKED_BY, RESTAURANT\
-                  WHERE R_Num = Rest_Num and Rest_Name = ?)'; 
+                  (select F_Num\
+                  from COOKED_BY, RESTAURANT\
+                  where R_Num = Rest_Num and Rest_Name = ?)'; 
     let foodtmp = ''
     db.query(foodsql,[_obj.content]  ,function (err, rows, fields) {
       for(var i = 0; i<rows.length;i++){
