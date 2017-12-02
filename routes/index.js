@@ -262,7 +262,7 @@ router.post('/message', (req, res) => {
             "message": {
               "text": tmp,
               "message_button" : {
-                "label" : "지도"
+                "label" : "위치",
                 "url" : rows.Map
               }
             }
