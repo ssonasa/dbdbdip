@@ -258,39 +258,36 @@ router.post('/message', (req, res) => {
         tmp += '식당이름 : ' + rows2[0].Rest_Name + '\n메뉴 : '+ foodtmp + '\n예상가격(1인당) : ' + rows2[0].Average_Cost;
         console.log(tmp); 
         let cb = function(){
-          let message = {
-            "keyboard": {
-            "type": "buttons",
-            "buttons":[
-              "처음으로"
-              ]    
-            },
-            "message": {
-              "text": tmp,
-              "message_button" : {
-                "label": "위치",
-                "url" : rows2[0].Map
+          if(tmp == ''){
+            let message = {
+              "keyboard": {
+              "type": "text"    
+              },
+              "message": {
+              "text": '해당 음식점이 없습니다. 다시 입력해 주세요.'
               }
-            }
-          };/*
-          let message = {
-            "keyboard": {
+            };
+            chmod = 3;
+            res.send(message);  
+          }
+          else{
+            let message = {
+              "keyboard": {
               "type": "buttons",
-              "buttons": [
-                "처음으로",    
-              ]
-            },
-            "message": {
-              "text": tmp,
-              "message_button" : {
-                "label" : "위치",
-                "url" : rows2.Map
+              "buttons":[
+                "처음으로"
+                ]    
+              },
+              "message": {
+                "text": tmp,
+                "message_button" : {
+                  "label": "위치",
+                  "url" : rows2[0].Map
+                }
               }
-            }
-          };//let message = ~*/
-          console.log('hello');
-          let cb2 = function(){res.send(message);};
-          cb2();
+            res.send(message);    
+            };
+          }
         };// let cb function() = ~
         cb();
       });//db.query(sql)  
