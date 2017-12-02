@@ -176,6 +176,7 @@ router.post('/message', (req, res) => {
   else if(chmod = 2){
     chmod = 0;
     console.log(_obj.content);
+    console.log(chmod);
     let sql = 'select Rest_Name\
               from RESTAURANT\
               where Rest_Num in\
