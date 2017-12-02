@@ -276,8 +276,9 @@ router.post('/message', (req, res) => {
           console.log('hello');
           res.send(message);
         };// let cb function() = ~
-        cb();
-      });//db.query(sql)    
+        
+      });//db.query(sql)  
+      cb();  
     });//db.query(foodsql)
   }//else if  
       
