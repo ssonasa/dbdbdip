@@ -252,8 +252,10 @@ router.post('/message', (req, res) => {
           else
             foodtmp += rows[i].Food_Name + '\n';
       }
+      console.log(foodtmp);
       db.query(sql,[_obj.content]  ,function (err, rows, fields) {
-        tmp += '식당이름 : ' + rows.Rest_Name + '\n메뉴 :\n'+ foodtmp + '\n예상가격(1인당) : ' + rows.Average_Cost; 
+        tmp += '식당이름 : ' + rows.Rest_Name + '\n메뉴 :\n'+ foodtmp + '\n예상가격(1인당) : ' + rows.Average_Cost;
+        console.log(tmp); 
         let cb = function(){
           let message = {
             "keyboard": {
