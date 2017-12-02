@@ -165,14 +165,49 @@ router.post('/message', (req, res) => {
           "type": "text"    
       },
       "message": {
-        "text": '안녕하세여'
+        "text": '원하시는 음식을 입력하세요.'
       }
     };
+    chmod = 2;
     res.send(message);  
   }
 
   //음식 선택
+  else if(chmod = 2){
+    chmod = 0;
+    console.log(_obj.content);
+    let sql = 'select Rest_Name\
+              from RESTAURANT\
+              where Rest_Num in\
+              (select R_Num\
+              from COOKED_BY,FOOD\
+              where F_Num=Food_Num and Food_Name = ?)';
+    
+    db.query(sql,[_obj.content]  ,function (err, rows, fields) {
+      for(var i = 0; i<rows.length;i++){
+        console.log(rows[i].Rest_Name);
+          if(rows.length-1 == i)
+            tmp += rows[i].Rest_Name;
+          else
+            tmp += rows[i].Rest_Name + '\n';
+      }
+         
+      let cb = function(){
+        console.log(tmp);
+        let message = {
+          "keyboard": {
+          "type": "text"    
+          },
+          "message": {
+          "text": tmp
+          }
+        };
+        res.send(message);
+      };
+      cb();   
+    });
 
+  }
 
 
   //나머지
