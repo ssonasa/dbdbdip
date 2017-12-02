@@ -234,10 +234,7 @@ router.post('/message', (req, res) => {
     console.log(_obj.content);
     
 
-    let sql = 'select Rest_Name,Map, Average_Cost\
-              from RESTAURANT\
-              where Rest_Name = ?';
-
+    
     let foodsql = 'select Food_Name\
                   from FOOD\
                   WHERE Food_Num in\
@@ -253,6 +250,9 @@ router.post('/message', (req, res) => {
           else
             foodtmp += rows[i].Food_Name + '\n';
       }
+      let sql = 'select Rest_Name,Map, Average_Cost\
+              from RESTAURANT\
+              where Rest_Name = ?';
 
       console.log(foodtmp);
       db.query(sql,[_obj.content]  ,function (err, rows2, fields) {
