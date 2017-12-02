@@ -284,9 +284,9 @@ router.post('/message', (req, res) => {
                   "label": "위치",
                   "url" : rows2[0].Map
                 }
-              }
-            res.send(message);    
+              } 
             };
+            res.send(message);   
           }
         };// let cb function() = ~
         cb();
