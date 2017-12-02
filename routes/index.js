@@ -250,13 +250,12 @@ router.post('/message', (req, res) => {
           else
             foodtmp += rows[i].Food_Name + '\n';
       }
+      console.log(foodtmp);
       let sql = 'select Rest_Name,Map, Average_Cost\
               from RESTAURANT\
               where Rest_Name = ?';
-
-      console.log(foodtmp);
       db.query(sql,[_obj.content]  ,function (err, rows2, fields) {
-        tmp += '식당이름 : ' + rows2.Rest_Name + '\n메뉴 :\n'+ foodtmp + '\n예상가격(1인당) : ' + rows2.Average_Cost;
+        tmp += '식당이름 : ' + rows2[0].Rest_Name + '\n메뉴 :\n'+ foodtmp + '\n예상가격(1인당) : ' + rows2[0].Average_Cost;
         console.log(tmp); 
         let cb = function(){
           let message = {
