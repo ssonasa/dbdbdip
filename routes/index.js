@@ -128,6 +128,7 @@ router.post('/message', (req, res) => {
 
   //종류선택
   else if(chmod == 1) {
+    chmod = 0;
     console.log(_obj.content);
     let sql = 'select Rest_Name from FOOD_TYPE,RESTAURANT where Type_Num = T_Num and Type_Name = ?';
     
