@@ -232,7 +232,7 @@ router.post('/message', (req, res) => {
     console.log(_obj.content);
     console.log(chmod);
 
-    let sql = 'select Food_Name\
+    let sql = 'select Rest_Name,Map, Average_Cost\
               from RESTAURANT\
               where Rest_Name = ?';
 
