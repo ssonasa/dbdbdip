@@ -223,6 +223,27 @@ DATA_TABLES['FOOD'] = [ #40ea
 ('양꼬치','F077'),
 ('군만두','F078'),
 
+('순한알밥','F079'),
+('매콤알밥','F080'),
+('매콤치즈알밥','F081'),
+('카레알밥','F082'),
+('갈릭알밥','F083'),
+('갈립치즈알밥','F084'),
+
+('벌집삼겹살','F085'),
+('돼지왕구이','F086'),
+('갈비탕','F087'),
+('김치말이국수','F088'),
+('냉면','F089'),
+('항정살','F090'),
+
+('고추장찜닭','F091'),
+('안동찜닭','F092'),
+('순살안동장찜닭','F093'),
+('순살고추장찜닭','F094'),
+('치즈순살찜닭중','F095'),
+('치즈순살찜닭대','F096'),
+
 ]
 
 DATA_TABLES['FOOD_TYPE'] = [ 
@@ -325,6 +346,27 @@ DATA_TABLES['COOKED_BY'] = [
 ('F076',        'R013'),
 ('F077',        'R013'),
 ('F078',        'R013'),
+
+('F079',        'R014'),
+('F080',        'R014'),
+('F081',        'R014'),
+('F082',        'R014'),
+('F083',        'R014'),
+('F084',        'R014'),
+
+('F085',        'R015'),
+('F086',        'R015'),
+('F087',        'R015'),
+('F088',        'R015'),
+('F089',        'R015'),
+('F090',        'R015'),
+
+('F091',        'R016'),
+('F092',        'R016'),
+('F093',        'R016'),
+('F094',        'R016'),
+('F095',        'R016'),
+('F096',        'R016'),
 ]
 
 #한식:T001 일식:T002  중식:T003  양식:T004  술집:T005  기타:T006
@@ -338,13 +380,13 @@ DATA_TABLES['RESTAURANT'] = [ #20ea
 ('멘야고이치',    'R007','T002','https://m.store.naver.com/restaurants/detail?id=20322446','6500~7500'),
 ('밀플랜비',      'R008','T006','https://m.store.naver.com/restaurants/detail?id=38009073&query=%EB%B0%80%ED%94%8C%EB%9E%9C%EB%B9%84%20%EC%95%84%EC%A3%BC%EB%8C%80%EC%A0%90&entry=plt','3000~6000'),
 ('Mr.chef',      'R009','T001','https://m.store.naver.com/restaurants/detail?id=30811729&query=%EB%AF%B8%EC%8A%A4%ED%84%B0%EC%89%90%ED%94%84&entry=plt','5500~8000')
-('봉구스밥버거',    'R010','T001','https://m.store.naver.com/restaurants/detail?id=31077787','1800~3500'),
+('봉구스밥버거',  'R010','T001','https://m.store.naver.com/restaurants/detail?id=31077787','1800~3500'),
 ('미스사이공',    'R011','T006','https://m.store.naver.com/restaurants/detail?id=38762477&query=%EC%95%84%EC%A3%BC%EB%8C%80%20%EB%AF%B8%EC%8A%A4%EC%82%AC%EC%9D%B4%EA%B3%B5','3900~4900'),
-('도담도담치킨',    'R012','T006','https://m.store.naver.com/restaurants/detail?id=36655478&entry=plt','15000~16000'),
-('뽕스토리',    'R013','T003','https://m.store.naver.com/restaurants/detail?id=342201261&query=%EB%AF%B8%EA%B0%81%EC%96%91%EA%BC%AC%EC%B9%98&%EB%BD%95%EC%8A%A4%ED%86%A0%EB%A6%AC&entry=plt','4500~35000'),
-#('봉구스밥버거',    'R014','T001','https','6500~7500'),
-#('봉구스밥버거',    'R015','T001','https','6500~7500'),
-#('봉구스밥버거',    'R016','T001','https','6500~7500'),
+('도담도담치킨',  'R012','T006','https://m.store.naver.com/restaurants/detail?id=36655478&entry=plt','15000~16000'),
+('뽕스토리',      'R013','T003','https://m.store.naver.com/restaurants/detail?id=342201261&query=%EB%AF%B8%EA%B0%81%EC%96%91%EA%BC%AC%EC%B9%98&%EB%BD%95%EC%8A%A4%ED%86%A0%EB%A6%AC&entry=plt','4500~35000'),
+('알촌',            'R014','T001','https://m.store.naver.com/restaurants/detail?id=32848717&query=%EC%95%8C%EC%B4%8C%20%EC%95%84%EC%A3%BC%EB%8C%80%EC%A0%90&entry=plt','3500~4800'),
+('벌집삼겹살',       'R015','T001','https://m.store.naver.com/restaurants/detail?id=19438153&query=%EB%B2%8C%EC%A7%91%EC%82%BC%EA%B2%B9%EC%82%B4%20%EC%95%84%EC%A3%BC%EB%8C%80%EC%A0%90&entry=plt','3500~11900'),
+('내가찜한닭',       'R016','T001','https://m.store.naver.com/restaurants/detail?id=33471257&query=%EB%82%B4%EA%B0%80%EC%B0%9C%ED%95%9C%EB%8B%AD%20%EC%95%84%EC%A3%BC%EB%8C%80%EC%A0%90&entry=plt','17000~39000'),
 #('봉구스밥버거',    'R017','T001','https','6500~7500'),
 #('봉구스밥버거',    'R018','T001','https','6500~7500'),
 #('봉구스밥버거',    'R019','T001','https','6500~7500'),
