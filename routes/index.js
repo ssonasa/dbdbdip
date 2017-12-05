@@ -82,7 +82,8 @@ router.post('/message', (req, res) => {
         }
       }
     };
-    res.send(message);  
+    res.send(message);
+      
   }
 
   //밖에서 먹을래!
@@ -100,7 +101,8 @@ router.post('/message', (req, res) => {
         "text": '메뉴를 선택하세요.'
       }
     };
-    res.send(message);  
+    res.send(message);
+      
   }
   
   //밖 > 종류
@@ -152,6 +154,7 @@ router.post('/message', (req, res) => {
         };
         chmod = 3;
         res.send(message);
+        tmp = '';
       };
       cb();   
     });
@@ -218,6 +221,7 @@ router.post('/message', (req, res) => {
           };
           chmod = 3;
           res.send(message);
+          tmp = '';
         }
       }; 
       cb();   
@@ -263,7 +267,8 @@ router.post('/message', (req, res) => {
             }
           };
           chmod = 3;
-          res.send(message); 
+          res.send(message);
+          tmp = ''; 
         }
           
         else {
@@ -287,7 +292,7 @@ router.post('/message', (req, res) => {
               } 
             };
             res.send(message);   
-            
+            tmp = '';
           };// let cb function() = ~
           cb();
         }
@@ -312,6 +317,7 @@ router.post('/message', (req, res) => {
       } 
     };
     res.send(message);
+    tmp = '';
   }
 
   
