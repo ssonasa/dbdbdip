@@ -11,7 +11,7 @@ DB_NAME = 'dbdbdeep'
 print("DB loading...\n\n")
 #login(connect to mysql)---------------------------------------------------------------------------------
 try:
-  cnx = mysql.connector.connect(host= 'choosethis.cemhkd80ccxj.us-east-2.rds.amazonaws.com',
+  cnx = mysql.connector.connect(host= 'dbdbdeep.co7zvonejcs7.ap-northeast-2.rds.amazonaws.com',
                                 user='blcocas',
                                 password = '201221027',
                                 charset='utf8mb4')
