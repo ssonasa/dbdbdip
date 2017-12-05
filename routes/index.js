@@ -14,7 +14,7 @@ var chmod = 0;
 
 //mysql sever
 var db = mysql.createConnection({
-  host: 'choosethis.cemhkd80ccxj.us-east-2.rds.amazonaws.com',
+  host: 'dbdbdeep.co7zvonejcs7.ap-northeast-2.rds.amazonaws.com',
   user: 'blcocas',
   password: '201221027',
   database: 'dbdbdeep'
@@ -114,7 +114,6 @@ router.post('/message', (req, res) => {
               "일식",
               "중식",
               "양식",
-              "술집",
               "기타"
           ]
       },
