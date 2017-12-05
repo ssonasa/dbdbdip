@@ -66,8 +66,6 @@ router.post('/message', (req, res) => {
   }
   //안에서 먹을래!
   else if(_obj.content ==  '안에서 먹을래'){
-    tmp = '';
-    chmod = 0;
     console.log(_obj.content);
     let message = {
       "keyboard": {
@@ -89,8 +87,6 @@ router.post('/message', (req, res) => {
 
   //밖에서 먹을래!
   else if(_obj.content ==  '밖에서 먹을래'){
-    tmp = '';
-    chmod = 0;
     console.log(_obj.content);
     let message = {
       "keyboard": {
@@ -109,8 +105,6 @@ router.post('/message', (req, res) => {
   
   //밖 > 종류
   else if(_obj.content ==  '종류로 검색'){
-    tmp = '';
-    chmod = 0;
     console.log(_obj.content);
     let message = {
       "keyboard": {
@@ -134,7 +128,6 @@ router.post('/message', (req, res) => {
   //음식 종류 들어오고 종류선택
   else if(chmod == 1) {
     chmod = 0;
-    tmp = '';
     console.log(_obj.content);
     let sql = 'select Rest_Name from FOOD_TYPE,RESTAURANT where Type_Num = T_Num and Type_Name = ?';
     
@@ -166,8 +159,6 @@ router.post('/message', (req, res) => {
 
   //밖 > 음식
   else if(_obj.content ==  '음식으로 검색'){
-    tmp = '';
-    chmod = 0;
     console.log(_obj.content);
     let message = {
       "keyboard": {
@@ -184,7 +175,6 @@ router.post('/message', (req, res) => {
   //음식 입력
   else if(chmod == 2){
     chmod = 0;
-    tmp = '';
     console.log(_obj.content);
     console.log(chmod);
     let sql = 'select Rest_Name\
@@ -309,8 +299,6 @@ router.post('/message', (req, res) => {
 
   //나머지
   else {
-    chmod = 0;
-    tmp = '';
     console.log("나머지");
     let message = {
       "keyboard": {
