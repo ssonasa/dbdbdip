@@ -548,7 +548,7 @@ DATA_TABLES['RESTAURANT'] = [ #20ea
 ('Mr.Chef Pocha','R006','T004','https://m.store.naver.com/restaurants/detail?id=21278958&query=%EB%AF%B8%EC%8A%A4%ED%84%B0%EC%89%90%ED%94%84%ED%8F%AC%EC%B0%A8&entry=plt','9500~50000'),
 ('멘야고이치',    'R007','T002','https://m.store.naver.com/restaurants/detail?id=20322446','6500~7500'),
 ('밀플랜비',      'R008','T006','https://m.store.naver.com/restaurants/detail?id=38009073&query=%EB%B0%80%ED%94%8C%EB%9E%9C%EB%B9%84%20%EC%95%84%EC%A3%BC%EB%8C%80%EC%A0%90&entry=plt','3000~6000'),
-('Mr.chef',      'R009','T001','https://m.store.naver.com/restaurants/detail?id=30811729&query=%EB%AF%B8%EC%8A%A4%ED%84%B0%EC%89%90%ED%94%84&entry=plt','5500~8000')
+('Mr.chef',      'R009','T001','https://m.store.naver.com/restaurants/detail?id=30811729&query=%EB%AF%B8%EC%8A%A4%ED%84%B0%EC%89%90%ED%94%84&entry=plt','5500~8000'),
 ('봉구스밥버거',  'R010','T001','https://m.store.naver.com/restaurants/detail?id=31077787','1800~3500'),
 ('미스사이공',    'R011','T006','https://m.store.naver.com/restaurants/detail?id=38762477&query=%EC%95%84%EC%A3%BC%EB%8C%80%20%EB%AF%B8%EC%8A%A4%EC%82%AC%EC%9D%B4%EA%B3%B5','3900~4900'),
 ('도담도담치킨',  'R012','T006','https://m.store.naver.com/restaurants/detail?id=36655478&entry=plt','15000~16000'),
@@ -561,7 +561,7 @@ DATA_TABLES['RESTAURANT'] = [ #20ea
 ('서울곱창',       'R019','T001','https://m.store.naver.com/restaurants/detail?id=18227763&query=%EC%84%9C%EC%9A%B8%EA%B3%B1%EC%B0%BD&entry=plt','17000~50000'),
 ('전설의치킨',     'R020','T001','https://m.store.naver.com/restaurants/detail?id=37811564&query=%EC%A0%84%EC%84%A4%EC%9D%98%EC%B9%98%ED%82%A8%20%EC%95%84%EC%A3%BC%EB%8C%80%EC%A0%90&entry=plt','11000~1400'),
 ('반값소',         'R021','T001','https://m.store.naver.com/restaurants/detail?id=37592424&query=%EB%B0%98%EA%B0%92%EC%86%8C&entry=plt','3000~39000'),
-('푸드테라피',    'R022','T001','https://m.store.naver.com/restaurants/detail?id=33133453&query=%ED%91%B8%EB%93%9C%ED%85%8C%EB%9D%BC%ED%94%BC&entry=plt','5000~7000')
+('푸드테라피',    'R022','T001','https://m.store.naver.com/restaurants/detail?id=33133453&query=%ED%91%B8%EB%93%9C%ED%85%8C%EB%9D%BC%ED%94%BC&entry=plt','5000~7000'),
 ('만고쿠',         'R023','T002','https://m.store.naver.com/restaurants/detail?id=37342139&query=%EB%A7%8C%EA%B3%A0%EC%BF%A0&entry=plt','4000~8000'),
 ('우만동족발집',    'R024','T001','https://m.store.naver.com/restaurants/detail?id=36424455','3000~36000')
 #('푸드테라피',    'R022','T001','https','5000~7000'),
